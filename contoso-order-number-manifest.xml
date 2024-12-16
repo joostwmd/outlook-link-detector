@@ -52,6 +52,9 @@
   <Rule xsi:type="RuleCollection" Mode="And">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
     <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="9Digits" RegExValue="\d{9}" PropertyName="BodyAsPlaintext"/>
+    <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="LetterE" RegExValue="e" PropertyName="BodyAsPlaintext"/>
+    <!-- <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="Https" RegExValue="https" PropertyName="BodyAsPlaintext"/> -->
+    <!-- <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="Link1" RegExValue="https?:\/\/(www\.)?[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+" PropertyName="BodyAsPlaintext"/> -->
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
 
@@ -74,6 +77,9 @@
               <Rule xsi:type="RuleCollection" Mode="And">
                 <Rule xsi:type="ItemIs" ItemType="Message" />
                 <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="OrderNumber" RegExValue="CO-\d{9}" PropertyName="BodyAsPlaintext"/>
+                <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="LetterE" RegExValue="e" PropertyName="BodyAsPlaintext"/>
+                <!-- <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="Https" RegExValue="https" PropertyName="BodyAsPlaintext"/> -->
+                <!-- <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="Link" RegExValue="https?:\/\/(www\.)?[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+" PropertyName="BodyAsPlaintext"/> -->
               </Rule>
             </ExtensionPoint>
           </DesktopFormFactor>

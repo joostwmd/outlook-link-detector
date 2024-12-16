@@ -1,16 +1,31 @@
 ---
 page_type: sample
 products:
-- office-365
-- office-outlook
+  - office-365
+  - office-outlook
 languages:
-- javascript
+  - javascript
 extensions:
   contentType: samples
   technologies:
-  - Add-ins
+    - Add-ins
   createdDate: 1/11/2018 1:18:43 PM
 ---
+
+# The Problem with the Link regex
+
+## My Setup
+
+I am using a mac book and the outlook app version: 16.77. I cloned this repo and manually added the add in to my outlook. It worked for the example and it was able to detect the order number and highlight the text. Inside the modal there is an error, because i don't have a running server for the html and js, as I want to have a proof of concept for the Link regex first.
+
+![Screenshot of the issue](readme-images/screenshot.png)
+
+I expected that the regex for the link would work similar, that is highlighted and clickable which opens the currently broken modal. But I am not able to activate the regex in any way i tried. The text is not highlighted and the link is not clickable, meaning that it does not open the modal and opens the link in a webbrowser as its default behavior, which is what i want to prevent.
+
+## Observations
+
+The link regex also breaks the add in completly as a side effect. When I try to use it, none of the other regex rules work. I tried this minimal regex: https and even that breaks the add-in and I think the problem is that links are clickable per default and that it conflicts with the add in which causes it to fail.
+
 # Outlook Add-in: Contoso Order Number
 
 This sample add-in demonstrates how to create a [contextual add-in](https://docs.microsoft.com/office/dev/add-ins/outlook/contextual-outlook-add-ins) that activates when a regular expression match is detected in the body of a message.
@@ -32,7 +47,7 @@ In order to try this add-in, you'll need:
 1. Open the manifest (`contoso-order-number-manifest.xml`) in a text editor and replace all instances of `https://localhost:8080` with the URL to the directory where you copied the files in the previous step.
 1. Verify that you can browse to the updated URLs in your manifest from your client using a browser. For example, you should be able to browse to the URL in the `<bt:Url id="detectedEntityURL">` element in the manifest and see the following page:
 
-    ![A screenshot of the add-in's index.html page loaded in a browser](readme-images/browse-to-add-in.PNG)
+   ![A screenshot of the add-in's index.html page loaded in a browser](readme-images/browse-to-add-in.PNG)
 
 ## Sideload the add-in
 
@@ -43,28 +58,6 @@ Follow the instructions at [Sideload Outlook add-ins for testing](https://docs.m
 1. Open [Outlook on the web](https://outlook.office.com).
 1. Send yourself a message with a Contoso order number in the body. For example:
 
-    ```text
-    Thanks for your order! Your order number is CO-123456789.
-    ```
-
-1. When the message arrives in your inbox, open it. The order number should be highlighted. Click on the order number to open the add-in.
-
-    ![A screenshot of the add-in activated in Outlook on the web](readme-images/add-in-activated.PNG)
-
-## Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## Copyright
-
-Copyright (c) Microsoft. All rights reserved.
+   ```text
+   Thanks for your order! Your order number is CO-123456789.
+   ```

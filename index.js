@@ -7,6 +7,9 @@ Office.initialize = function(reason) {
   });
 }
 
+
+
+
 function loadEntities() {
   // getSelectedRegExMatches is in preview, so need to test for it
   if (Office.context.mailbox.item.getSelectedRegExMatches !== undefined) {
@@ -33,6 +36,11 @@ function loadEntities() {
   } else {
     $("#all-matches").text("All matches was null");
   }
+
+  const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
+  console.log('videos', videos);
+
+
 }
 
 function showError(message) {
