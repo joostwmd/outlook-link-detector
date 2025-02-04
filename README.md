@@ -12,7 +12,7 @@ extensions:
   createdDate: 1/11/2018 1:18:43 PM
 ---
 
-# The Problem with the Link regex
+# My Problem with the Link and Email regex
 
 ## My Setup
 
@@ -24,9 +24,15 @@ I expected that the regex for the link would work similar, that is highlighted a
 
 ## Observations
 
-The link regex also breaks the add in completly as a side effect. When I try to use it, none of the other regex rules work. I tried this minimal regex: https and even that breaks the add-in and I think the problem is that links are clickable per default and that it conflicts with the add in which causes it to fail.
+The link regex also breaks the add in completly as a side effect. When I try to use it, none of the other regex rules work. I tried this minimal regex: https and even that breaks the add-in and I think the problem is that links are clickable per default and that it conflicts with the add in which causes it to fail. To test this hypothesis I tried the same with an email regex. Emails also have a native onClick event in Outlook and yet again, adding an email regex to my manifest completly breaks the plugin. 
 
-# Outlook Add-in: Contoso Order Number
+
+
+
+
+# This repo is cloned from the Contoso Order Number Example
+
+## Outlook Add-in: Contoso Order Number
 
 This sample add-in demonstrates how to create a [contextual add-in](https://docs.microsoft.com/office/dev/add-ins/outlook/contextual-outlook-add-ins) that activates when a regular expression match is detected in the body of a message.
 
